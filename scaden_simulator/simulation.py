@@ -99,7 +99,7 @@ if norm == 'CPM':
     ##### Only mRNA genes #####
 
     # Import gene list for filtering
-    gene_list_df = pd.read_csv('/ceph/ibmi/it/projects/ML_BI/04_Testing_Foundation_models/scFoundation/scFoundation/OS_scRNA_gene_index.19264.tsv', header=0, delimiter='\t')
+    gene_list_df = pd.read_csv('mRNA_annotation.tsv', header=0, delimiter='\t')
     gene_list = list(gene_list_df['gene_name'])
 
     # Select (and add) genes as necessary
@@ -122,7 +122,7 @@ elif norm == 'rank':
     ##### Only mRNA genes #####
 
     # Import gene list for filtering
-    gene_list_df = pd.read_csv('/ceph/ibmi/it/projects/ML_BI/04_Testing_Foundation_models/scFoundation/scFoundation/OS_scRNA_gene_index.19264.tsv', header=0, delimiter='\t')
+    gene_list_df = pd.read_csv('mRNA_annotation.tsv', header=0, delimiter='\t')
     gene_list = list(gene_list_df['gene_name'])
 
     # Select (and add) genes as necessary
@@ -144,7 +144,7 @@ elif norm == 'raw':
     ##### Only mRNA genes #####
 
     # Import gene list for filtering
-    gene_list_df = pd.read_csv('/ceph/ibmi/it/projects/ML_BI/04_Testing_Foundation_models/scFoundation/scFoundation/OS_scRNA_gene_index.19264.tsv', header=0, delimiter='\t')
+    gene_list_df = pd.read_csv('mRNA_annotation.tsv', header=0, delimiter='\t')
     gene_list = list(gene_list_df['gene_name'])
 
     # Select (and add) genes as necessary
