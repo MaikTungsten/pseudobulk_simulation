@@ -7,8 +7,7 @@ For pseudobulk simulations, the Scaden-based pseudobulk simulator slightly adapt
 The Scaden-based simulator is used to simulate a variety of pseudobulks with diverse cell type proportions. With the sparse and rare parameters, the simulation can be fine-tuned to randomly set cell type proportions to 0 in a specific pseudobulk. On this basis, cells will be sampled from the scRNA-seq data and aggregated, i.e. summed, and scaled to counts per million (CPM), normalized by rank or kept in raw counts scale. You can specify the number of cells to use to build each pseudobulk and the number of pseudobulks to simulate. Importantly, the scRNA-seq data should be in h5ad format and contain a column named "cell_type" in the observations. Based on this column, cell types are identified, proportions simulated and pseudobulks constructed. The returned pseudobulks will be in csv format.
 
 ```
-usage: simulation.py [-h] [--sc_path SC_PATH] [--sc_layer SC_LAYER] [--samplenum SAMPLENUM] [--props PROPS] [--ncells NCELLS] [--rare RARE] [--norm {rank,CPM,raw}] [--sparse SPARSE]
-                     [--outname OUTNAME]
+usage: simulation.py [-h] [--sc_path SC_PATH] [--sc_layer SC_LAYER] [--samplenum SAMPLENUM] [--props PROPS] [--ncells NCELLS] [--rare RARE] [--norm {rank,CPM,raw}] [--filter_genes {all, mRNA, 3k}] [--sparse SPARSE] [--outname OUTNAME]
 
 Basic tool for simulating pseudobulk data from single-cell data.
 
@@ -23,6 +22,8 @@ options:
   --rare RARE           Probability for rare cell types.
   --norm {rank,CPM,raw}
                         Normalization strategy for pseudobulk after aggregation of single cells.
+  --filter_genes {all, mRNA, 3k}
+                        Selection of set of genes from pseudobulks: mRNA, all genes as in single-cels, 3k most variable genes.
   --sparse SPARSE       Probability for sparse cell types (e.g. cell type is not present).
   --outname OUTNAME     Ideally, specifiy a date or tissue ID.
 ```

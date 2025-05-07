@@ -110,8 +110,6 @@ def generate_simulated_data(scData, outname=None,
                                )
 
     print('Sampling is done.')
-    #if outname is not None:
-    #    simudata.write_h5ad(outname + '.h5ad')
     
     return simudata # anndata object containing ground-truth proportions in observations and having geneIDs as numbers for hidden layers
 
